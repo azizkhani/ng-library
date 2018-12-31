@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+/* after changing this file run 'yarn run webpack:build' */
+
+@import 'assets/css/simple-line-icons.css';
+@import 'assets/css/bootstrap.min.css';
+@import 'assets/css/font-awesome.min.css';
+@import 'assets/css/font-awesome-animation.css';
+@import 'assets/css/smartadmin-production-plugins.min.css';
+@import 'assets/css/smartadmin-production.min.css';
+@import 'assets/css/smartadmin-skins.min.css';
+@import 'assets/css/smartadmin-angular2.css';
+@import 'assets/css/demo.min.css';
+@import 'assets/css/mouseHoverImage.css';
+@import 'assets/css/smartadmin-rtl.min.css';
+@import 'assets/MyJQuery/dhtmlxTree/dhtmlxtree.css';
+@import 'assets/js/PersianCalendar/calendar.css';
+@import 'assets/css/global.css';

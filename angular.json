@@ -23,9 +23,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/vendor.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/MyJQuery/dhtmlxTree/dhtmlxtree.js",
+              "src/assets/MyJQuery/bootstrap.min.js",
+              "src/assets/MyJQuery/global.js",
+              "src/assets/js/toastr/toastr.min.js",
+              "src/assets/js/PersianCalendar/PersianCalendar.js"
+            ]
           },
           "configurations": {
             "production": {

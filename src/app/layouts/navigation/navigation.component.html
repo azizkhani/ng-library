@@ -1,0 +1,37 @@
+<aside id="left-panel">
+    <div class="login-info">
+        <span>
+            <a href="javascript:void(0);" id="show-shortcut" *ngIf="currentAccount">
+                <div></div>
+                <img *ngIf="currentAccount.personelImageCode" class="img-circle size-30x30"
+                     [src]="'rest/core/attachment/getFile/authorized?fileToken=' + currentAccount.personelImageCode">
+                <span *ngIf="currentAccount.fullName">
+                    {{currentAccount.fullName}}
+                </span>
+            </a>
+        </span>
+    </div>
+    <nav saSmartMenu *ngIf="navigationMenuItem">
+        <ul>
+            <li routerLinkActive="" *ngIf="searchStringLength < 2">
+                <a routerLink="/home">
+                    <i class="fa fa-home"></i>
+                    <span class="menu-item-parent"> داشبورد </span>
+                </a>
+            </li>
+            <li [hidden]="searchStringLength < 2">
+                <bh-navigation-menu-builder *ngIf="searchStringLength > 2"
+                                            [subNavigationMenuItem]="rootSearchActionMenu"></bh-navigation-menu-builder>
+            </li>
+            <li [hidden]="!(searchStringLength < 2)" *ngFor="let origNavItem of originalMenu?.childs">
+                <a><i class="{{origNavItem?.icon}}"></i>
+                    <span class="menu-item-parent">{{origNavItem?.topic}}</span>
+                </a>
+                <ul>
+                    <bh-navigation-menu-builder [subNavigationMenuItem]="origNavItem"></bh-navigation-menu-builder>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <sa-minify-menu></sa-minify-menu>
+</aside>

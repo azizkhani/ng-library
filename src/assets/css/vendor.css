@@ -1,0 +1,50 @@
+/* after changing this file run 'yarn run webpack:build' */
+
+/*
+@import 'simple-line-icons.css';
+@import 'bootstrap.min.css';
+@import 'font-awesome.min.css';
+@import 'font-awesome-animation.css';
+@import 'smartadmin-production-plugins.min.css';
+@import 'smartadmin-production.min.css';
+
+@import 'smartadmin-skins.min.css';
+
+@import 'smartadmin-angular2.css';
+@import 'demo.min.css';
+@import 'mouseHoverImage.css';
+@import 'smartadmin-rtl.min.css';
+
+@import '../MyJQuery/dhtmlxTree/dhtmlxtree.css';
+@import '../MyJQuery/dropzone/dist/basic.css';
+@import '../MyJQuery/dropzone/dist/dropzone.css';
+@import '../js/PersianCalendar/calendar.css';
+
+@import '~ngx-toastr/toastr.css';
+
+@import 'global.css';*/
+
+
+/* after changing this file run 'yarn run webpack:build' */
+
+/*@import '~ng-baharan/src/main/webapp/content/css/simple-line-icons.css';
+@import '~ng-baharan/src/main/webapp/content/css/bootstrap.min.css';
+@import '~ng-baharan/src/main/webapp/content/css/font-awesome.min.css';
+@import '~ng-baharan/src/main/webapp/content/css/font-awesome-animation.css';
+@import '~ng-baharan/src/main/webapp/content/css/smartadmin-production-plugins.min.css';
+@import '~ng-baharan/src/main/webapp/content/css/smartadmin-production.min.css';
+@import '~ng-baharan/src/main/webapp/content/css/smartadmin-skins.min.css';
+@import '~ng-baharan/src/main/webapp/content/css/smartadmin-angular2.css';
+@import '~ng-baharan/src/main/webapp/content/css/demo.min.css';
+@import '~ng-baharan/src/main/webapp/content/css/mouseHoverImage.css';
+@import '~ng-baharan/src/main/webapp/content/css/smartadmin-rtl.min.css';
+@import '~ng-baharan/src/main/webapp/content/MyJQuery/dhtmlxTree/dhtmlxtree.css';
+@import '~ng-baharan/src/main/webapp/content/MyJQuery/dropzone/dist/basic.css';
+@import '~ng-baharan/src/main/webapp/content/MyJQuery/dropzone/dist/dropzone.css';
+@import '~ng-baharan/src/main/webapp/content/js/PersianCalendar/calendar.css';
+@import '~bootstrap-rtl/dist/css/bootstrap-rtl.css';
+@import '~ngx-toastr/toastr.css';
+@import '~ng-baharan/src/main/webapp/content/css/global.css';
+@import '~@ng-select/ng-select/themes/default.theme.css'
+@import 'custom.css';*/
+

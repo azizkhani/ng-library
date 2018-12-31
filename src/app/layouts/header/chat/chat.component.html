@@ -1,0 +1,38 @@
+<div id="activity" class="btn-header transparent pull-right">
+    <span>
+        <a (click)="onToggle()" style="background: transparent !important;border: 0px solid !important;">
+            <i class="fa fa-comments"></i>
+            <b *ngIf="unreadMessageCount!=0" class="badge bg-color-red"
+               style="position:absolute; left: 104px !important;top: 1px;right: inherit !important;">{{unreadMessages.length}}</b>
+        </a>
+    </span>
+</div>
+<div class="ajax-dropdown " #dropdown style="position:absolute; left: 0 !important;
+      right: inherit !important;
+      display: block;
+      width: 264px;
+      height: auto;
+      background-color: rgb(40, 55, 79);
+      color: rgb(191, 199, 203);
+      font-size: 10px;  ">
+    <div style="border-bottom: 1px solid #005a69">
+        شما از <strong style="color:red">{{unreadMessages?.length}}</strong> نفر پیام دارید
+    </div>
+    <div *ngIf="unreadMessages">
+        <div *ngFor="let unreadMessage of unreadMessages; let rownum = index; trackBy: trackUnsenMessage"
+             (click)="openChat(unreadMessage.userId, unreadMessage.fullName)">
+            <div *ngIf="unreadMessage?.seenCount > 0">
+                <div style="border-bottom: 1px solid gray; padding: 10px; font-size: 11px; cursor:pointer">
+                    <img alt="" class="img-circle size-30x30  authenticatedUserImage"
+                         [src]="'/rest/core/attachment/getFile/' + unreadMessage?.personelImageCode">
+                    <span class="authenticatedUserFullName">{{unreadMessage.fullName}}</span>
+                    <span class="authenticatedUserFullName badge bg-color-red">{{unreadMessage?.seenCount}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div> نمایش چت
+
+        <i class="glyphicon glyphicon-chevron-left"></i>
+    </div>
+</div>

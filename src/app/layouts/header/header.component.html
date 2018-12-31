@@ -1,0 +1,48 @@
+<header id="header">
+    <div id="title">
+        <a href="#/home">
+            <strong>
+                {{appName}}
+            </strong>
+        </a>
+        <div style="float:right">
+            <sa-collapse-menu></sa-collapse-menu>
+        </div>
+    </div>
+    <div class="pull-right" style="width: 80%">
+        <!--<sa-full-screen></sa-full-screen>-->
+        <!--<bh-chat></bh-chat>-->
+        <div class="transparent pull-right" id="avtivity-container">
+            <sa-activities></sa-activities>
+        </div>
+        <div class="project-context pull-right" *ngIf="currentAccount">
+            <span class="label" *ngIf="currentAccount.fullName"> {{currentAccount.fullName}} </span>
+            <span class="project-selector dropdown-toggle" data-toggle="dropdown" aria-expanded="true"> عملیات کاربری <i
+                    class="fa fa-angle-down"></i></span>
+            <!-- Suggestion: populate this list with fetch and push technique -->
+            <ul class="dropdown-menu">
+                <li>
+                    <a style="cursor: pointer"
+                       onclick="openWindow(98,'تغییر پسورد' , 'View/security/passwordChange/Edit.jsp', 500, 300, false, true);">
+                        <i class="fa fa-key text-drank" style="float: right; padding-left: 9px;"></i>
+                        تغییر پسورد
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <sa-logout></sa-logout>
+                </li>
+            </ul>
+            <!-- end dropdown-menu-->
+        </div>
+        <form class="header-search pull-left">
+            <input id="search-fld" type="text" name="search-header" placeholder="جستجو در منو"
+                   class="ui-autocomplete-input"
+                   (ngModelChange)="searchInputChange($event)" [(ngModel)]="headerSearch">
+            <button type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+            <a href="javascript:void(0);" id="cancel-search-js" title="لغو جستجو"><i class="fa fa-times"></i></a>
+        </form>
+    </div>
+</header>

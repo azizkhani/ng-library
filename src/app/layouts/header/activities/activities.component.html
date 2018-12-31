@@ -1,0 +1,93 @@
+<span id="activity" class="activity-dropdown" (click)="onToggle()">
+  <i class="fa fa-th"></i>
+</span>
+<div class="ajax-dropdown" #dropdown>
+    <ul class="notification-body">
+        <li [class.active]="defualtActivityTab == 'tab1'" class="active " placement="top" tooltip="لیست پنجره ها">
+            <label class="btn btn-default" (click)="defualtActivityTab = 'tab1'"><i class="fa fa-windows"></i> پنجره ها
+            </label>
+        </li>
+        <!--<li [class.active]="defualtActivityTab == 'tab2'" placement="top" tooltip="منوهای منتخب">
+            <label class="btn btn-default" (click)="defualtActivityTab = 'tab2'"><i class="fa fa-list"></i> منوهای منتخب
+            </label>
+        </li>-->
+        <li [class.active]="defualtActivityTab == 'tab3'" placement="top" tooltip="سوابق ورود به سیستم">
+            <label class="btn btn-default" (click)="defualtActivityTab = 'tab3'"><i class="fa fa-lock"></i> سوابق ورود
+            </label>
+        </li>
+    </ul>
+    <!-- notification content -->
+    <div class="ajax-notifications custom-scroll">
+        <tabset class="padding-10" style="padding-right: 10px">
+            <tab [active]="defualtActivityTab == 'tab1'">
+                <ul class="notification-body">
+                    <li *ngFor="let entry of navMenuArray" class="width-100">
+                            <span class="padding-10">
+                                <em class="badge padding-5 no-border-radius bg-color-blueLight pull-left margin-right-5">
+                                    <i class="fa fa-list-alt fa-fw"></i>
+                                </em>
+                                <span>
+                                    <a (click)="openIframeWithId(entry)">
+                                        {{entry.topic}}
+                                    </a>
+                                </span>
+                                <span class="pull-right font-xs text-muted" style="padding-top: 7px;">
+<!--                                     <i id='bookMarkStart-{{entry.id}}'
+                                        [ngClass]="(entry.isBookmark == true)?'fa fa-lg text-orange fa-star':'fa fa-lg text-orange fa-star-o'"
+                                        style="cursor:pointer;color: orange; float: left;padding-left: 10px;"
+                                        (click)="onBookMarkClick(entry)"></i>-->
+                                     <i class="fa fa-lg fa-times-circle text-lightred"
+                                        style="cursor:pointer;color: red; float: left;padding-left: 10px;"
+                                        (click)="onCloseClick(entry.id)"></i>
+                                </span>
+                            </span>
+                    </li>
+                </ul>
+            </tab>
+            <tab [active]="defualtActivityTab == 'tab2'">
+                <ul class="notification-body">
+                    <li *ngFor="let entry of navBookmarkMenuArray" class="width-100">
+                            <span class="padding-10">
+                                <em class="badge padding-5 no-border-radius bg-color-blueLight pull-left margin-right-5">
+                                    <i class="fa fa-list-alt fa-fw"></i>
+                                </em>
+                                <span>
+                                    <a (click)="openIframeWithId(entry)">
+                                        {{entry.topic}}
+                                    </a>
+                                </span>
+                                <!--<span class="pull-right font-xs text-muted" style="padding-top: 7px;">
+                                     <i id='bookMarkStart-{{entry.id}}'
+                                        [ngClass]="(entry.isBookmark == true)? 'fa fa-lg text-orange fa-star':'fa fa-lg text-orange fa-star-o'"
+                                        style="cursor:pointer;color: orange; float: left;padding-left: 10px;"
+                                        (click)="onBookMarkClick(entry.id)"></i>
+                                </span>-->
+                            </span>
+                    </li>
+                </ul>
+            </tab>
+            <tab [active]="defualtActivityTab == 'tab3'">
+                <ul class="notification-body">
+                    <li *ngFor="let loginHistory of loginHistoryList" class="width-100">
+                            <span class="padding-10" [ngClass]="{'error': !loginHistory.success}">
+                                <em class="badge padding-5 no-border-radius bg-color-blueLight pull-left margin-right-5"
+                                    *ngIf="loginHistory.success">
+                                    <i class="fa fa-check fa-fw"></i>
+                                </em>
+                                <em class="badge padding-5 no-border-radius bg-color-blueLight pull-left margin-right-5"
+                                    *ngIf="!loginHistory.success">
+                                    <i class="fa fa-exclamation-triangle fa-fw"></i>
+                                </em>
+                                <span *ngIf="loginHistory.success">ورود موفق به سیستم</span>
+                                <span *ngIf="!loginHistory.success">ورود نا موفق به سیستم</span>
+                                <br>
+                                <span class="pull-right font-xs text-muted">
+                                    <i> {{loginHistory.loginSolarDate}} - {{loginHistory.ip}} </i>
+                                </span>
+                            </span>
+                    </li>
+                </ul>
+            </tab>
+        </tabset>
+    </div>
+</div>

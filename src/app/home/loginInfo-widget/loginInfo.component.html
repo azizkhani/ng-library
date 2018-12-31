@@ -1,0 +1,42 @@
+<div *ngIf="userHistory">
+    <sa-widget id="info" [colorbutton]="false" [sortable]="true" [editbutton]="false" [deletebutton]="false"
+               [fullscreenbutton]="false" [togglebutton]="false"
+               color="white">
+        <div class="inner-25" style="height: 267px;">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-3 profile-pic">
+                        <img [src]="'rest/core/attachment/getFile/authorized?fileToken=' + userHistory.personelIamgeCode">
+                    </div>
+                    <div class="col-sm-9">
+                        <h1>{{userHistory.firstName}} <span class="semi-bold">{{userHistory.lastName}}</span></h1>
+                        <ul class="list-unstyled">
+                            <li>
+                                <p class="text-muted">
+                                    <i class="fa fa-phone"></i>&#xA0;&#xA0;(<span class="txt-color-darken">313</span>)
+                                    <span class="txt-color-darken">{{userHistory.phone}}</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="text-muted">
+                                    <i class="fa fa-male"></i>&#xA0;&#xA0;<span class="txt-color-darken"> کد پرسنلی {{userHistory.personCode}}</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="text-muted">
+                                    <i class="fa fa-laptop"></i>&#xA0;&#xA0;<span class="txt-color-darken">  IP قبلی {{userHistory.pereviousIp}}</span>
+                                </p>
+                            </li>
+
+                            <li>
+                                <p class="text-muted">
+                                    <i class="fa fa-laptop"></i>&#xA0;&#xA0;<span class="txt-color-darken">  IP فعلی {{userHistory.ip}}</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </sa-widget>
+</div>

@@ -1,0 +1,165 @@
+.authentication-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    min-height: 100vh;
+    width: 100%
+}
+
+.authentication-wrapper .authentication-inner {
+    width: 100%
+}
+
+.authentication-wrapper.authentication-1, .authentication-wrapper.authentication-2, .authentication-wrapper.authentication-4 {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.authentication-wrapper.authentication-1 .authentication-inner {
+    max-width: 300px
+}
+
+.authentication-wrapper.authentication-2 .authentication-inner {
+    max-width: 380px
+}
+
+.authentication-wrapper.authentication-3 {
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: stretch;
+    -ms-flex-pack: stretch;
+    justify-content: stretch
+}
+
+.authentication-wrapper.authentication-3 .authentication-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: stretch;
+    -ms-flex-pack: stretch;
+    justify-content: stretch
+}
+
+.authentication-wrapper.authentication-4 .authentication-inner {
+    max-width: 800px
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .authentication-wrapper:after {
+        content: '';
+        display: block;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 0%;
+        flex: 0 0 0%;
+        min-height: inherit;
+        width: 0;
+        font-size: 0
+    }
+}
+
+body {
+    background: #fafafd;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+
+    text-align: right !important;
+    direction: rtl !important;
+}
+.pb-5, .py-5 {
+    padding-bottom: 3rem !important;
+}
+
+.form-label, .col-form-label, .col-form-legend {
+    margin-bottom: calc(.438rem - 2px);
+    font-weight: 500;
+    font-size: .83125rem;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .438rem .875rem;
+    font-size: .894rem;
+    line-height: 1.54;
+    color: #4E5155;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(24,28,33,0.1);
+    border-radius: .25rem;
+    -webkit-transition: border-color 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
+}
+.form-control {
+    min-height: calc(2.25rem + 2px);
+}
+
+.d-flex, .d-inline-flex, .media, .media>:not(.media-body), .jumbotron, .card {
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+}
+
+.align-items-center {
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+.justify-content-between {
+    -webkit-box-pack: justify !important;
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+}
+
+.d-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+.custom-control {
+    position: relative;
+    display: block;
+    min-height: 1.47rem;
+    padding-left: 1.563rem;
+}
+.custom-control {
+    min-height: 1.125rem;
+    padding-right: 1.563rem;
+    padding-left: 0;
+}
+.m-0 {
+    margin: 0 !important;
+}
+.btn-primary {
+    border-color: transparent;
+    background: #7b83ff;
+    color: #fff;
+}
+.btn {
+    font-size: .894rem;
+}
+
+a:hover {
+    color: #3c8ae2;
+    text-decoration: none;
+}
+a {
+    color: #1e70cd;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}

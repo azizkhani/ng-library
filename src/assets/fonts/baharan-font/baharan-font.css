@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: normal;
+    src: url("IranSansNormal.woff") format("woff");
+}
+
+@font-face {
+    font-family: "IranSansNormal";
+    font-style: normal;
+    font-weight: normal;
+    src: url("IranSansNormal.woff") format("woff");
+}
+
+@font-face {
+    font-family: "IranSansBold";
+    font-style: normal;
+    font-weight: normal;
+    src: url("IranSansBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: BaharanBTitrBold;
+    src: url('BTitrBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: BaharanBNazanin;
+    src: url('BNazanin.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: BaharanBTitrBold;
+    src: url('BTitrBold.woff');
+}
+
+@font-face {
+    font-family: BaharanBNazanin;
+    src: url('BNazanin.woff');
+}
+
+@font-face {
+    font-family: BaharanBTitrBold;
+    src: url('BTitrBold.ttf');
+}
+
+@font-face {
+    font-family: BaharanBNazanin;
+    src: url('BNazanin.ttf');
+}

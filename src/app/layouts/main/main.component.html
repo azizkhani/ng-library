@@ -1,0 +1,15 @@
+<sa-header></sa-header>
+<bh-navigation></bh-navigation>
+<!--<router-outlet name='navbar'></router-outlet>-->
+<div id="main" role="main">
+    <sa-ribbon></sa-ribbon>
+    <div [hidden]="isIframeActive" id="outletContent" #outletContent>
+        <router-outlet></router-outlet>
+    </div>
+    <div [hidden]="!isIframeActive" id="iframeContent" #iframeContent>
+    </div>
+</div>
+<sa-footer></sa-footer>
+
+
+
