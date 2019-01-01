@@ -4,4 +4,3 @@ export * from './search.directive';
 export * from './searchClear.directive';
 export * from './searchType.enum';
 export * from './searchPattern.model';
-export * from './searchPattern.component';

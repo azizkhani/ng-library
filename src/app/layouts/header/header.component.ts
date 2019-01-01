@@ -3,11 +3,11 @@
 *    @ AH.GHORAB / H.RASOULI
 *
 */
-import {Component, ElementRef, OnDestroy, OnInit, Renderer} from '@angular/core';
-import {Account} from '../../shared/account/account.model';
-import {JhiEventManager} from 'ng-jhipster';
-import {Principal} from '../../shared/auth';
-import {APP_NAME} from '../../app.constants';
+import { Component, ElementRef, OnDestroy, OnInit, Renderer } from '@angular/core';
+import { Account } from '../../shared/account/account.model';
+import { JhiEventManager } from 'ng-jhipster';
+import { Principal } from '../../shared/auth';
+import { APP_NAME } from '../../app.constants';
 
 declare var $: any;
 
@@ -25,9 +25,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     appName = APP_NAME;
 
     constructor(private el: ElementRef,
-                private eventManager: JhiEventManager,
-                private renderer: Renderer,
-                private principal: Principal) {
+        private eventManager: JhiEventManager,
+        private renderer: Renderer,
+        private principal: Principal) {
         this.principal.identity().then(account => {
             this.currentAccount = account;
         });

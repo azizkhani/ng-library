@@ -15,7 +15,7 @@ export class AuthServerProvider {
             '&jcaptcha=' + encodeURIComponent(credentials.jcaptcha)
             // +'&submit=Login'
         ;
-        let headers = new HttpHeaders({
+        const headers = new HttpHeaders({
             'Content-Type': 'application/x-www-form-urlencoded'
         });
         if (credentials.showCapcha) {
@@ -25,10 +25,9 @@ export class AuthServerProvider {
         return this.http.post('login', data, {headers: headers, observe: 'response'});
     }
 
-    logout(): Observable<any> {
-        return this.http.post('j_spring_security_logout', {}).map((response: Response) => {
-            this.http.get('rest/core/security/user/authenitacedUser').subscribe(() => {
-            });
+    logout(): any {
+        this.http.post('j_spring_security_logout', {}).subscribe((response) => {
+            this.http.get('rest/core/security/user/authenitacedUser').subscribe(() => {});
             return response;
         });
     }

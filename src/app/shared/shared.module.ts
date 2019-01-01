@@ -5,20 +5,24 @@
  */
 
 import { CUSTOM_ELEMENTS_SCHEMA, ModuleWithProviders, NgModule } from '@angular/core';
-
-import { BhSharedCommonModule } from './shared-common.module';
-import { BhSharedLibsModule } from './shared-lib.module';
+import { BhSharedLibsModule, BhSharedCommonModule } from '.';
 
 @NgModule({
     imports: [
         BhSharedLibsModule,
         BhSharedCommonModule,
     ],
-    providers: [
+    declarations: [
     ],
     exports: [
-        BhSharedCommonModule,
-    ]
+        BhSharedCommonModule
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class BhSharedModule {
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: BhSharedModule
+        };
+    }
 }

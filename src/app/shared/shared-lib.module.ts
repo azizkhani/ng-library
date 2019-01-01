@@ -15,6 +15,12 @@ import {
 } from '../blocks/interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { TabsModule, ProgressbarModule, BsDropdownModule, TooltipModule } from 'ngx-bootstrap';
+import { TreeModule } from 'ng2-tree';
+import { DpDatePickerModule } from 'ng2-jalali-date-picker';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
     imports: [
@@ -32,11 +38,29 @@ import { ToastrModule } from 'ngx-toastr';
         ToastrModule.forRoot({
             positionClass: 'toast-bottom-left',
             preventDuplicates: true,
-        })
+        }),
+        TabsModule.forRoot(),
+        ProgressbarModule.forRoot(),
+        BsDropdownModule.forRoot(),
+        TooltipModule.forRoot(),
+        TreeModule,
+        DpDatePickerModule,
+        NgSelectModule,
     ],
     exports: [
+        FormsModule,
+        CommonModule,
+        NgbModule,
+        NgJhipsterModule,
         LoadingBarHttpClientModule,
         LoadingBarRouterModule,
+        TabsModule,
+        ProgressbarModule,
+        BsDropdownModule,
+        TooltipModule,
+        TreeModule,
+        DpDatePickerModule,
+        NgSelectModule,
     ]
 })
 export class BhSharedLibsModule {

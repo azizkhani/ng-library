@@ -7,7 +7,6 @@ import { AppState } from './app.service';
 import { BhSharedModule } from './shared/shared.module';
 import { BhLayoutModule } from './layouts/layout.module';
 import { AuthModule } from './auth';
-import { BhSharedCommonModule, BhSharedLibsModule } from './shared';
 import { FormsModule } from '@angular/forms';
 import { BhErrorModule } from './errors';
 import { BhHomeModule } from './home';
@@ -23,19 +22,14 @@ const APP_PROVIDERS = [
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule,
-    FormsModule,
-    BhSharedModule,
+    BhSharedModule.forRoot(),
     AuthModule,
     BhHomeModule,
     BhLayoutModule,
-    BhSystemModule,
+    // BhSystemModule,
     BhErrorModule
   ],
   declarations: [AppComponent],
-  providers: [
-    APP_PROVIDERS,
-  ],
   exports: [],
   bootstrap: [AppComponent]
 })

@@ -1,9 +1,9 @@
-import {ChangeDetectionStrategy, Component, ElementRef, OnDestroy, OnInit, Renderer} from '@angular/core';
-import {ActivitiesService} from './activities.service';
-import {LoginHistory} from './loginHistory.model';
-import {JhiEventManager} from 'ng-jhipster';
-import {NavigationMenuItem} from '../../navigation';
-import {Subscription} from 'rxjs/Subscription';
+import { ChangeDetectionStrategy, Component, ElementRef, OnDestroy, OnInit, Renderer } from '@angular/core';
+import { ActivitiesService } from './activities.service';
+import { LoginHistory } from './loginHistory.model';
+import { JhiEventManager } from 'ng-jhipster';
+import { NavigationMenuItem } from '../../navigation';
+import { Subscription } from 'rxjs/Subscription';
 
 declare var $: any;
 
@@ -28,13 +28,13 @@ export class ActivitiesComponent implements OnInit, OnDestroy {
     defualtActivityTab = 'tab1';
 
     constructor(private el: ElementRef,
-                private eventManager: JhiEventManager,
-                private renderer: Renderer,
-                private activitiesService: ActivitiesService) {
+        private eventManager: JhiEventManager,
+        private renderer: Renderer,
+        private activitiesService: ActivitiesService) {
         this.eventSubscriber = this.eventManager.subscribe('activeNavigationMenu', (response) => {
             if (this.navMenuArray.filter(c => {
-                    return (c.attrMap.path === response.content.menuItem.attrMap.path);
-                }
+                return (c.attrMap.path === response.content.menuItem.attrMap.path);
+            }
             ).length === 0) {
                 this.navMenuArray.push(response.content.menuItem);
             }
@@ -127,7 +127,7 @@ export class ActivitiesComponent implements OnInit, OnDestroy {
         });
     }
 
-    onCloseClick(id ?: number) {
+    onCloseClick(id?: number) {
         let isAnotherPageIsShowingAlready = false;
         if (id !== 1) {
             for (let index = 0; index < this.navMenuArray.length; index++) {

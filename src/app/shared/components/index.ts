@@ -5,3 +5,4 @@ export * from './confirm';
 export * from './fileUpload';
 export * from './iframe';
 export * from './pagination';
+export * from './searchFilter';

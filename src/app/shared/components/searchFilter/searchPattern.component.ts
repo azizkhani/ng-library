@@ -1,5 +1,5 @@
 import {AfterContentChecked, Component, Input, OnInit} from '@angular/core';
-import {Pattern} from './searchPattern.model';
+import { Pattern } from '../../directives/searchFilter/searchPattern.model';
 
 @Component({
     selector: 'bh-search-pattern',
