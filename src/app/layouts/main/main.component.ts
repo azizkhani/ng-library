@@ -3,12 +3,12 @@
  *    @ H.RASOULI / AH.GHORAB
  *
  */
-import {Component, ComponentFactoryResolver, OnDestroy, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
-import {Router} from '@angular/router';
-import {NavigationMenuItem} from '../navigation';
-import {JhiEventManager} from 'ng-jhipster';
-import {Subscription} from 'rxjs';
-import {IframeComponent} from '../../shared/components/iframe';
+import { Component, ComponentFactoryResolver, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Router } from '@angular/router';
+import { NavigationMenuItem } from '../navigation';
+import { JhiEventManager } from 'ng-jhipster';
+import { Subscription } from 'rxjs';
+import { IframeComponent } from '../../shared/components/iframe';
 
 @Component({
     selector: 'bh-main-layout',
@@ -16,13 +16,13 @@ import {IframeComponent} from '../../shared/components/iframe';
 })
 export class BhMainComponent implements OnInit, OnDestroy {
 
-    @ViewChild('iframeContent', {read: ViewContainerRef}) private iframeContent: ViewContainerRef;
+    @ViewChild('iframeContent', { read: ViewContainerRef }) private iframeContent: ViewContainerRef;
     isIframeActive = false;
     navigationMenuListener: Subscription;
 
     constructor(private componentFactoryResolver: ComponentFactoryResolver,
-                private router: Router,
-                private eventManager: JhiEventManager) {
+        private router: Router,
+        private eventManager: JhiEventManager) {
         this.navigationMenuListener = this.eventManager.subscribe('activeNavigationMenu', (response) => {
             this.handleRouteClick(response.content.menuItem);
         });
@@ -39,14 +39,14 @@ export class BhMainComponent implements OnInit, OnDestroy {
 
         if (!navigationMenuArray.attrMap.path) {
             this.isIframeActive = true;
-            let factory = this.componentFactoryResolver.resolveComponentFactory(IframeComponent);
-            let componentRef = this.iframeContent.createComponent(factory);
+            const factory = this.componentFactoryResolver.resolveComponentFactory(IframeComponent);
+            const componentRef = this.iframeContent.createComponent(factory);
             componentRef.instance.ifSrc = navigationMenuArray.attrMap.url;
             componentRef.instance.secureRes();
             componentRef.instance.id = navigationMenuArray.id;
             componentRef.instance.topic = navigationMenuArray.topic;
             navigationMenuArray.componentRef = componentRef;
-            this.router.navigate(['view/' + this.getIframePageName(navigationMenuArray.attrMap.url)])
+            this.router.navigate(['view/' + this.getIframePageName(navigationMenuArray.attrMap.url)]);
         } else {
             this.router.navigate([navigationMenuArray.attrMap.path]);
         }

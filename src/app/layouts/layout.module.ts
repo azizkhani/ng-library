@@ -38,8 +38,6 @@ import { BhSharedCommonModule } from '../shared';
         LeftBarComponent,
         FakeRouteComponent
     ],
-    exports: [
-    ],
     entryComponents: [
         IframeComponent,
         FakeRouteComponent

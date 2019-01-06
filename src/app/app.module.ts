@@ -2,17 +2,17 @@
  * @H.RASOULI
  */
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
 import { AppState } from './app.service';
-import { BhSharedModule } from './shared/shared.module';
-import { BhLayoutModule } from './layouts/layout.module';
 import { AuthModule } from './auth';
-import { FormsModule } from '@angular/forms';
+import { BHModuleConfig } from './config';
 import { BhErrorModule } from './errors';
 import { BhHomeModule } from './home';
+import { BhLayoutModule } from './layouts/layout.module';
 import { BhSystemModule } from './management/system.module';
-import { AppComponent } from './app.component';
-import { BrowserModule } from '@angular/platform-browser';
+import { BhSharedModule } from './shared/shared.module';
+import { BHConfigService } from './config.service';
 
 export * from './';
 const APP_PROVIDERS = [
@@ -26,7 +26,7 @@ const APP_PROVIDERS = [
     AuthModule,
     BhHomeModule,
     BhLayoutModule,
-    // BhSystemModule,
+    BhSystemModule,
     BhErrorModule
   ],
   declarations: [AppComponent],
@@ -34,11 +34,13 @@ const APP_PROVIDERS = [
   bootstrap: [AppComponent]
 })
 export class BhAppModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(moduleConfig: BHModuleConfig): ModuleWithProviders {
     return {
       ngModule: BhAppModule,
       providers: [
-        APP_PROVIDERS,
+        { provide: BHModuleConfig, useValue: moduleConfig },
+        { provide: BHConfigService, useClass: BHConfigService, deps: [BHModuleConfig] }
+
       ]
     };
   }

@@ -16,14 +16,11 @@ import {GroupActionTreePopupService} from './group-popup.service';
         BhSharedCommonModule,
         GroupRoute
     ],
-    declarations: [],
-    entryComponents: [],
     providers: [
         GroupService,
         GroupRouteResolver,
         GroupActionTreePopupService
     ],
-    exports: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GroupModule {

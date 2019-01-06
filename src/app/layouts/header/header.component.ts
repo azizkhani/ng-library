@@ -4,10 +4,11 @@
 *
 */
 import { Component, ElementRef, OnDestroy, OnInit, Renderer } from '@angular/core';
-import { Account } from '../../shared/account/account.model';
 import { JhiEventManager } from 'ng-jhipster';
-import { Principal } from '../../shared/auth';
 import { APP_NAME } from '../../app.constants';
+import { Account } from '../../shared/account/account.model';
+import { Principal } from '../../shared/auth';
+
 
 declare var $: any;
 
@@ -22,12 +23,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
     active: boolean;
     loading: boolean;
     currentAccount: Account = new Account();
-    appName = APP_NAME;
+    appName;
 
     constructor(private el: ElementRef,
         private eventManager: JhiEventManager,
         private renderer: Renderer,
         private principal: Principal) {
+        this.appName = APP_NAME;
         this.principal.identity().then(account => {
             this.currentAccount = account;
         });

@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 import { TabsModule } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { BhSharedModule } from 'src/app/shared/shared.module';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
     imports: [
@@ -23,7 +23,6 @@ import { BhSharedModule } from 'src/app/shared/shared.module';
         RouterModule,
         PopoverModule,
         TabsModule.forRoot(),
-        BhSharedModule,
     ],
     declarations: [
         FullScreenComponent,
@@ -31,6 +30,7 @@ import { BhSharedModule } from 'src/app/shared/shared.module';
         ActivitiesComponent,
         LogoutComponent,
         HeaderComponent,
+        ChatComponent
     ],
     exports: [
         HeaderComponent,

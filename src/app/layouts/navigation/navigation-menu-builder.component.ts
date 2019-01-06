@@ -3,10 +3,10 @@
  *    @ AH.GHORAB
  *
  */
-import {Component, Input} from '@angular/core';
-import {JhiEventManager} from 'ng-jhipster';
-import {NavigationService} from './navigation.service';
-import {NavigationMenuItem} from './navigation.model';
+import { Component, Input } from '@angular/core';
+import { JhiEventManager } from 'ng-jhipster';
+import { NavigationService } from './navigation.service';
+import { NavigationMenuItem } from './navigation.model';
 
 @Component({
 
@@ -28,7 +28,7 @@ export class NavigationMenuBuilderComponent {
     navMenuArray: Array<NavigationMenuItem> = new Array<NavigationMenuItem>();
 
     constructor(private eventManager: JhiEventManager,
-                private navigationService: NavigationService) {
+        private navigationService: NavigationService) {
         this.navigationService.navMenuArray.subscribe(navMenuArray => {
             this.navMenuArray = navMenuArray;
         });
@@ -37,25 +37,12 @@ export class NavigationMenuBuilderComponent {
     navItemClick(navigationMenuItem: NavigationMenuItem) {
         navigationMenuItem.isShowing = true;
         if (navigationMenuItem.childs === null || navigationMenuItem.childs.length === 0) {
-            /*            let isOpenedBefore = false;
-                        this.navMenuArray.forEach((item, index) => {
-                            item.isShowing = false;
-                            if (item.topic === navigationMenuItem.topic) {
-                                item.isShowing = true;
-                                isOpenedBefore = true;
-                            }
-                        });
-                        if (!isOpenedBefore) {
-                            navigationMenuItem.isShowing = true;
-                            this.navMenuArray.push(navigationMenuItem);
-                        }
-                        this.navigationService.navMenuArray.next(this.navMenuArray);*/
             this.eventManager.broadcast({
                 name: 'activeNavigationMenu',
                 content: {
                     menuItem: navigationMenuItem
                 }
-            })
+            });
         }
     }
 }

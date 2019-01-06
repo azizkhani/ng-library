@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {NavigationMenuItem} from '../navigation';
-import {JhiEventManager} from 'ng-jhipster';
-import {APP_NAME} from '../../app.constants';
+import { Component, OnInit } from '@angular/core';
+import { JhiEventManager } from 'ng-jhipster';
+import { NavigationMenuItem } from '../navigation';
+import { BHConfigService } from '../../config.service';
 
 @Component({
     selector: 'sa-route-breadcrumbs',
@@ -17,10 +17,12 @@ export class RouteBreadcrumbsComponent implements OnInit {
 
     public items: Array<string> = [];
     public activeNavigationMenuItem = new NavigationMenuItem;
-    public appname = APP_NAME;
+    public appname;
 
     constructor(
-        private eventManager: JhiEventManager) {
+        private eventManager: JhiEventManager,
+        private configService: BHConfigService) {
+        this.appname = configService.getConfig().APP_NAME;
     }
 
     ngOnInit() {
@@ -39,7 +41,7 @@ export class RouteBreadcrumbsComponent implements OnInit {
     }
 
     extract(route) {
-        let pageTitle = route.data.value['pageTitle'];
+        const pageTitle = route.data.value['pageTitle'];
         if (pageTitle && this.items.indexOf(pageTitle) === -1) {
             this.items.push(route.data.value['pageTitle']);
         }

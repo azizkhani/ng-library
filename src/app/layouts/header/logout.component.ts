@@ -3,8 +3,8 @@
 *    @ AH.GHORAB/ H.RASOULI
 *
 */
-import {Component} from '@angular/core';
-import {LoginService} from '../../shared/auth';
+import { Component } from '@angular/core';
+import { LoginService } from '../../shared/auth';
 
 
 @Component({

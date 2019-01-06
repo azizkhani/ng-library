@@ -19,13 +19,10 @@ import {PersonelRouteResolver} from './personel-route.resolver';
         BhSharedCommonModule,
         PersonelRoute
     ],
-    declarations: [],
-    entryComponents: [],
     providers: [
         PersonelService,
         PersonelRouteResolver
     ],
-    exports: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PersonelModule {

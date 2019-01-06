@@ -1,21 +1,22 @@
 /**
  * @ M.AMERY
  */
-import {Injectable} from '@angular/core';
-import {SERVER_API_URL} from '../../../app.constants';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
 
 @Injectable({
     providedIn: 'root'
 })
 export class ReauthenticateService {
-    private resourceUrl = SERVER_API_URL + 'rest/core/security/reauthentication';
+    private resourceUrl;
 
     constructor(private http: HttpClient) {
+        this.resourceUrl = '/rest/core/security/reauthentication';
     }
 
     checkReauthentication(url: string) {
         const params: HttpParams = new HttpParams().set('url', url);
-        return this.http.get(`${this.resourceUrl}` + '/checkUrl', {params: params});
+        return this.http.get(`${this.resourceUrl}` + '/checkUrl', { params: params });
     }
 }

@@ -22,8 +22,6 @@ import {OrganizationStructureModalPopupService} from './popupModal/organizationS
         BhSharedCommonModule,
         OrganizationStructureRoute
     ],
-    declarations: [],
-    entryComponents: [],
     providers: [
         OrganizationStructureService,
         OrganizationStructurePopupService,

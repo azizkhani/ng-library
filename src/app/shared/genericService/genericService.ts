@@ -3,11 +3,11 @@
  *    @ AH.GHORAB/H.RASOULI
  *
  */
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { QueryParam, QueryResult } from '../components/pagination';
+import { SERVER_API_URL } from '../../app.constants';
 
-import {SERVER_API_URL} from '../../app.constants';
-import {QueryParam, QueryResult} from '../components/pagination';
 
 export abstract class GenericService<T> {
 
@@ -21,7 +21,7 @@ export abstract class GenericService<T> {
     }
 
     public get(queryParam: QueryParam): Observable<QueryResult<T>> {
-        return this.http.get<any>(`${this.resourceUrl}/list`, {params: queryParam.toHttpPrams()});
+        return this.http.get<any>(`${this.resourceUrl}/list`, { params: queryParam.toHttpPrams() });
     }
 
     public find(id: any): Observable<any> {
@@ -41,6 +41,6 @@ export abstract class GenericService<T> {
     }
 
     public search(queryParam: QueryParam): Observable<QueryResult<T>> {
-        return this.http.get<any>(`${this.resourceUrl}/list`, {params: queryParam.toHttpPrams()});
+        return this.http.get<any>(`${this.resourceUrl}/list`, { params: queryParam.toHttpPrams() });
     }
 }

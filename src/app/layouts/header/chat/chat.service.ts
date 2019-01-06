@@ -61,7 +61,7 @@ export class ChatService {
 
     subscribeChannel() {
         this.stompClient.subscribe('/topic/channel/' + this.loggedInUser.id, (data) => {
-            let message = JSON.parse(data.body);
+            const message = JSON.parse(data.body);
             this.callChatComponent(message, MessageType.channel);
         });
         this.subscribeGroup();
@@ -69,7 +69,7 @@ export class ChatService {
 
     subscribeGroup() {
         this.stompClient.subscribe('/topic/group/' + this.loggedInUser.id, (data) => {
-            let message = JSON.parse(data.body);
+            const message = JSON.parse(data.body);
             this.callChatComponent(message, MessageType.group);
         });
         this.subscribeSeenUpdate();
@@ -77,7 +77,7 @@ export class ChatService {
 
     subscribeSeenUpdate() {
         this.stompClient.subscribe('/topic/seenUpdate/' + this.loggedInUser.id, (data) => {
-            let message = JSON.parse(data.body);
+            const message = JSON.parse(data.body);
             this.callChatComponent(message, null);
         });
     }

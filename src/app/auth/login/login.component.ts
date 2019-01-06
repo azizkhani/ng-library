@@ -1,12 +1,12 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { errorMsg } from '../../blocks/config';
+import { LoginService } from '../../shared/auth';
+import { BlockIpErrorService } from '../../shared/auth/block-ip-error.service';
+import { AlertToasterService, AlertToasterType } from '../../shared/components/alert';
+import { BHConfigService } from '../../config.service';
 
-import {LoginService} from '../../shared/auth';
-import {errorMsg} from '../../blocks/config';
-import {AlertToasterService, AlertToasterType} from '../../shared/components/alert';
-import {APP_NAME, UPDATED_DATE, VERSION} from '../../app.constants';
-import {HttpErrorResponse, HttpResponse} from '@angular/common/http';
-import {BlockIpErrorService} from '../../shared/auth/block-ip-error.service';
 
 @Component({
     selector: 'bh-login',
@@ -27,13 +27,15 @@ export class LoginComponent implements OnInit {
     private jReferer = '';
 
     constructor(private loginService: LoginService,
-                private router: Router,
-                private route: ActivatedRoute,
-                private alertToasterService: AlertToasterService,
-                private blockIpErrService: BlockIpErrorService) {
-        this.version = VERSION;
-        this.updateDate = UPDATED_DATE;
-        this.applicationName = APP_NAME;
+        private router: Router,
+        private route: ActivatedRoute,
+        private alertToasterService: AlertToasterService,
+        private blockIpErrService: BlockIpErrorService,
+        private configService: BHConfigService
+    ) {
+        this.version = this.configService.getConfig().VERSION;
+        this.updateDate = this.configService.getConfig().UPDATED_DATE;
+        this.applicationName = this.configService.getConfig().APP_NAME;
     }
 
     ngOnInit(): void {
@@ -70,7 +72,7 @@ export class LoginComponent implements OnInit {
             if (res instanceof HttpResponse) {
                 if (this.jReferer !== undefined && this.jReferer !== null && this.jReferer.length !== 0) {
                     this.router.navigate([this.jReferer], {
-                        queryParams: {Reauthenticate: true},
+                        queryParams: { Reauthenticate: true },
                         skipLocationChange: true
                     });
                 } else if (res.headers.get('frm.errorLocation') !== undefined

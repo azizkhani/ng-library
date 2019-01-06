@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  APP_NAME: 'APP_NAMEasds',
+  UPDATED_DATE: 'UPDATED_DATE',
+  VERSION: 'env.VERSION',
+  SERVER_API_URL: 'app',
+  BUILD_TIMESTAMP: 'BUILD_TIMESTAMP',
 };
 
 /*

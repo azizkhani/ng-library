@@ -3,12 +3,12 @@
  *    @ AH.GHORAB / H.RASOULI
  *
  */
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {JhiEventManager} from 'ng-jhipster';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { JhiEventManager } from 'ng-jhipster';
 
-import {Principal} from '../../shared/auth';
-import {NavigationMenuItem} from './navigation.model';
-import {NavigationService} from './navigation.service';
+import { Principal } from '../../shared/auth';
+import { NavigationMenuItem } from './navigation.model';
+import { NavigationService } from './navigation.service';
 
 @Component({
     selector: 'bh-navigation',
@@ -28,8 +28,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
     public searchStringLength = 0;
 
     constructor(private principal: Principal,
-                private navigationServeice: NavigationService,
-                private eventManager: JhiEventManager) {
+        private navigationServeice: NavigationService,
+        private eventManager: JhiEventManager) {
 
         this.navigationServeice.get().then(
             navdata => {

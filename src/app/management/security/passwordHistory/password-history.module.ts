@@ -18,8 +18,6 @@ import {BhSharedCommonModule} from '../../../shared/index';
         BhSharedCommonModule,
         PasswordHistoryRoute
     ],
-    declarations: [],
-    entryComponents: [],
     providers: [
         PasswordHistoryService,
     ],
