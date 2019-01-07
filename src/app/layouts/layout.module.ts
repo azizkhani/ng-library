@@ -15,7 +15,6 @@ import { RouteBreadcrumbsComponent } from './ribbon/route-breadcrumbs.component'
 import { LeftBarComponent } from './leftBar/leftBar.component';
 import { FakeRouteComponent } from './main/FakeRoute.component';
 import { LayoutRoute } from './layout.route';
-import { IframeComponent } from '../shared/components/iframe';
 import { HeaderModule } from './header/header.module';
 import { NavigationModule } from './navigation/navigation.module';
 import { BhSharedCommonModule } from '../shared';
@@ -27,7 +26,7 @@ import { BhSharedCommonModule } from '../shared';
         NavigationModule,
         FormsModule,
         RouterModule,
-        LayoutRoute,
+        // LayoutRoute,
         BhSharedCommonModule
     ],
     declarations: [
@@ -39,7 +38,6 @@ import { BhSharedCommonModule } from '../shared';
         FakeRouteComponent
     ],
     entryComponents: [
-        IframeComponent,
         FakeRouteComponent
     ]
 })

@@ -10,4 +10,3 @@ export * from './app.route';
 export * from './app.service';
 export * from './app.constants';
 export * from './smartadmin.config';
-export * from './app.module';

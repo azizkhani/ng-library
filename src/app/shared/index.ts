@@ -8,4 +8,3 @@ export * from './utils';
 export * from './pipes';
 export * from './shared-lib.module';
 export * from './shared-common.module';
-export * from './shared.module';

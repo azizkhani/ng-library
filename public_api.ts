@@ -1,1 +1,1 @@
-export * from './src/app/index';
+export * from './src/app/app.module';
