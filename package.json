@@ -15,7 +15,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "packagr": "ng-packagr -p ng-package.json ",
+    "packagr": "ng-packagr -p ng-package.json && cp -r ./src/assets ./dist/src/assets",
     "cleanup": "rimraf src/app/*.d.ts src/**/*.d.ts  src/app/**/*.js src/app/**/*.js.map  src/app/**/*.metadata.json "
   },
   "private": true,
